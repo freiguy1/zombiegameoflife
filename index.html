@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <style>
+            .alive {
+                background-color: green;
+            }
+            .dead {
+                background-color: red;
+            }
+            .zombie {
+                background-color: purple;
+            }
+            .cell {
+                margin: 0px;
+                padding: 5px;
+                color: white;
+                height: 25px;
+                width: 25px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <input id="zombdawgs" type="checkbox" data-bind="checked: zombdawgs">
+            <label for="zombdawgs">Enable zombies</label>
+        </div>
+        <table cellspacing="0" cellpadding="0">
+            <tbody data-bind="foreach: grid">
+                <tr data-bind="foreach: $data">
+                    <td>
+                        <p class="cell" data-bind="text: age, css: {alive: isAlive, dead: !isAlive(), zombie: isZombie}">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-debug.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
+        <script src="site.js"></script>
+    </body>
+</html>
+
